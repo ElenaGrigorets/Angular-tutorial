@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<button [disabled]="clicked" (click)="clickHandler()">Click me!</button>
+<div *ngIf="clicked">
+    <h2>Superboat is {{boat.name}}</h2>
+    <img [src]="boat.img" width=200px>
+    <p>It is built in {{boat.year}}!!!</p>
+</div>
+<h1>Boats</h1>
+<div *ngFor="let boat of boats">
+    <h2 [ngClass]="{
+        'red': boat.name === 'Star',
+        'green': boat.name === 'Mars'
+    }">{{boat.name}}</h2>
+
+    <img [src]="boat.img" width=200px>
+    <p>Built in {{boat.year}}</p>
+</div>
